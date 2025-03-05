@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "SalesforceController",
+    "Method": "ExportExcel",
+    "RelativePath": "api/salesforce/export",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

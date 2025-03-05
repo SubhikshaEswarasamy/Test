@@ -1,0 +1,47 @@
+﻿@model List<Dictionary<string, object>>
+
+<h2>Salesforce Account Records</h2>
+<a href="@Url.Action("ExportToExcel", "Salesforce")" class="btn btn-success">Download Excel</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            @if (Model.Any())
+            {
+                @foreach (var key in Model.First().Keys)
+                {
+                    <th>@key</th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model)
+        {
+            <tr>
+                @foreach (var value in record.Values)
+                {
+                    <td>@value</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    .table-dark {
+        background-color: #343a40;
+        color: white;
+    }
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2;
+    }
+</style>
